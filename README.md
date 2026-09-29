@@ -2,12 +2,6 @@
 
 > A modern, responsive and pixel-perfect developer portfolio built from a Figma design with **Next.js, TypeScript, Tailwind CSS, Storybook and GSAP**.
 
-<p align="center">
-  <a href="https://dev-portfolio-6d29.vercel.app/">
-    <strong>🌐 Live Demo</strong>
-  </a>
-</p>
-
 ---
 
 ## ✨ About The Project
