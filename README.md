@@ -494,28 +494,6 @@ Possible future improvements include:
 
 ---
 
-## 👩🏻‍💻 About Me
-
-I'm **Nastaran**, a Front-End Developer focused on building modern, responsive and reusable web interfaces.
-
-I enjoy working with:
-
-```text
-React
-Next.js
-TypeScript
-JavaScript
-Tailwind CSS
-GSAP
-Design Systems
-Component Architecture
-AI-assisted Development
-```
-
-I'm always learning, experimenting and looking for better ways to turn complex ideas into simple and maintainable interfaces.
-
----
-
 <p align="center">
   Made with ❤️ and a lot of ☕
 </p>
