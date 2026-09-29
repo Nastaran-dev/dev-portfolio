@@ -1,181 +1,527 @@
-# Developer Portfolio
+# ✦ Developer Portfolio
 
-Front-end implementation of the "Developer Portfolio" Figma design
-(`bcw9nWXLuBLSvE19pi8F6k`, node `7:9`), built with **Next.js (App
-Router) + TypeScript + Tailwind CSS**, componentized with **Storybook**.
+> A modern, responsive and pixel-perfect developer portfolio built from a Figma design with **Next.js, TypeScript, Tailwind CSS, Storybook and GSAP**.
 
-## Getting started
+<p align="center">
+  <a href="https://dev-portfolio-6d29.vercel.app/">
+    <strong>🌐 Live Demo</strong>
+  </a>
+</p>
+
+---
+
+## ✨ About The Project
+
+This portfolio is a front-end implementation of a **Figma Developer Portfolio design**, carefully translated into a responsive and reusable Next.js application.
+
+The main goal wasn't just to make the design look similar — I focused on building the project with a **clean architecture, reusable components, centralized design tokens and scalable feature-based structure**.
+
+The UI was implemented **pixel-by-pixel based on the Figma design**, including:
+
+* Typography
+* Spacing
+* Colors
+* Gradients
+* Border radius
+* Buttons
+* Form elements
+* Responsive layouts
+* Component states
+* Micro-interactions and animations
+
+---
+
+## 🚀 Tech Stack
+
+| Technology        | Usage                                 |
+| ----------------- | ------------------------------------- |
+| **Next.js**       | React framework & App Router          |
+| **TypeScript**    | Type safety                           |
+| **Tailwind CSS**  | Styling & design tokens               |
+| **GSAP**          | Scroll animations & parallax          |
+| **ScrollTrigger** | Scroll-based animation control        |
+| **Storybook**     | Component development & documentation |
+| **React**         | UI development                        |
+| **Vercel**        | Deployment                            |
+
+---
+
+## 🏗️ Architecture
+
+The project follows a **Feature-Based architecture** to keep each section isolated, maintainable and easy to scale.
+
+```text
+src/
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
+│
+├── components/
+│   ├── ui/
+│   │   ├── Button/
+│   │   ├── TextField/
+│   │   ├── TextArea/
+│   │   ├── GradientText/
+│   │   ├── SectionHeading/
+│   │   ├── Icon/
+│   │   ├── TechCard/
+│   │   ├── BrowserWindow/
+│   │   └── Parallax/
+│   │
+│   └── layout/
+│       ├── Header/
+│       └── Footer/
+│
+├── features/
+│   ├── hero/
+│   ├── about/
+│   ├── work/
+│   └── contact/
+│
+├── hooks/
+├── lib/
+├── types/
+└── constants/
+```
+
+### Why Feature-Based?
+
+Instead of keeping everything inside one large component tree, each page section has its own feature folder.
+
+This makes it easier to:
+
+* Maintain the codebase
+* Find related logic quickly
+* Reuse components
+* Scale the project
+* Work on individual features independently
+
+---
+
+## 🎨 Design System
+
+The design system was extracted directly from the Figma design instead of manually approximating the visual values.
+
+Design tokens are centralized inside:
+
+```text
+tailwind.config.ts
+```
+
+### 🎨 Colors
+
+```text
+Primary Magenta  → #DC00D3
+Primary Cyan     → #0CFFFF
+Dark Background  → #100425
+```
+
+Alongside neutral, accent, focus and error states.
+
+### 🔤 Typography
+
+The project uses:
+
+* **Josefin Sans** → headings & body
+* **Inter** → navigation
+
+The typography scale is mapped into reusable Tailwind tokens:
+
+```text
+text-h1
+text-h2
+text-h3
+text-body-lg
+text-body-sm
+text-label
+```
+
+### 🌈 Gradients
+
+Reusable gradients are also defined as design tokens:
+
+```text
+bg-brand-gradient
+bg-button-gradient
+```
+
+This keeps the visual language consistent throughout the application.
+
+---
+
+## 🧩 Reusable Components
+
+One of the main goals of the project was avoiding duplicated UI.
+
+Reusable primitives were created for common interface elements such as:
+
+* Button
+* TextField
+* TextArea
+* SectionHeading
+* GradientText
+* Icon
+* TechCard
+* BrowserWindow
+* ProjectCard
+* Parallax
+
+These components are designed to be used across different features instead of being rebuilt for every section.
+
+---
+
+## 📚 Storybook
+
+The UI components were developed and documented independently using **Storybook**.
+
+This makes it possible to:
+
+* Develop components in isolation
+* Test different component states
+* Review UI without running the entire page
+* Keep the Design System organized
+* Improve component reusability
+
+Run Storybook with:
+
+```bash
+npm run storybook
+```
+
+Then open:
+
+```text
+http://localhost:6006
+```
+
+---
+
+## ✨ GSAP + ScrollTrigger
+
+The portfolio uses **GSAP + ScrollTrigger** to create subtle scroll-based animations and parallax effects.
+
+The reusable:
+
+```text
+<Parallax />
+```
+
+component handles the animation layer.
+
+Example:
+
+```tsx
+<Parallax speed={40}>
+  <DecorativeElement />
+</Parallax>
+```
+
+### Animation approach
+
+The implementation focuses on subtle motion rather than excessive animation.
+
+A few important details:
+
+* `gsap.context()` is used for lifecycle management
+* `ctx.revert()` cleans up animations and ScrollTriggers
+* `scrub: 1` provides smooth scroll synchronization
+* No scroll-jacking
+* Only the Y axis is animated
+* Horizontal overflow is avoided
+* `prefers-reduced-motion` is respected
+
+This keeps the animation layer lightweight while maintaining a smooth experience.
+
+---
+
+## 📱 Responsive Design
+
+The portfolio was implemented with responsive layouts based on the Figma design.
+
+The main sections adapt across:
+
+```text
+📱 Mobile
+📱 Tablet
+💻 Desktop
+🖥️ Large Screens
+```
+
+The Hero section, navigation, project cards, tech stack and contact section all have responsive behavior.
+
+---
+
+## 🖼️ Project Sections
+
+### Hero
+
+The Hero section includes:
+
+* Personal introduction
+* Developer role
+* CTA buttons
+* Profile image
+* Gradient glow
+* Decorative grid
+* Responsive layout
+* GSAP parallax
+
+### About
+
+Includes:
+
+* Introduction
+* Skills
+* Tech Stack
+* Decorative illustration
+* Showcase preview
+
+### Work
+
+The Work section contains reusable project cards with:
+
+* Project title
+* Description
+* Technology stack
+* Preview
+* Responsive layout
+
+### Contact
+
+Includes:
+
+* Contact information
+* Reusable form components
+* Form state & validation
+* Responsive layout
+
+---
+
+## 🧠 Next.js Architecture
+
+The project uses the **Next.js App Router**.
+
+Server Components are used by default.
+
+Only components that actually require client-side state are marked with:
+
+```tsx
+"use client";
+```
+
+Currently, the main Client Components are:
+
+* `Header` → mobile menu state
+* `ContactForm` → form state & validation
+* `Parallax` → GSAP / ScrollTrigger lifecycle
+
+This keeps the client-side JavaScript limited to places where it's actually needed.
+
+---
+
+## 📂 Project Structure
+
+```text
+Developer Portfolio
+│
+├── src/
+│   ├── app/
+│   ├── components/
+│   │   ├── ui/
+│   │   └── layout/
+│   │
+│   ├── features/
+│   │   ├── hero/
+│   │   ├── about/
+│   │   ├── work/
+│   │   └── contact/
+│   │
+│   ├── hooks/
+│   ├── lib/
+│   ├── types/
+│   └── constants/
+│
+├── public/
+│   ├── images/
+│   └── videos/
+│
+├── .storybook/
+├── tailwind.config.ts
+└── package.json
+```
+
+---
+
+## 🛠️ Getting Started
+
+Clone the repository and install dependencies:
 
 ```bash
 npm install
-npm run dev       # http://localhost:3000
-npm run storybook # http://localhost:6006
 ```
 
-Other scripts:
+Start the development server:
 
 ```bash
-npm run build         # production build
-npm run start         # run the production build
-npm run typecheck     # tsc --noEmit
-npm run lint           # next lint
-npm run build-storybook
-```
-
-> This project was authored in a sandboxed environment with no network
-> access, so `npm install` / `next build` / `tsc` could not actually be
-> executed here. The code was written and manually reviewed for type
-> and import correctness, but please run `npm run typecheck` and
-> `npm run build` as your first step locally and report back if
-> anything surfaces.
-
-## Project structure
-
-```
-src/
-  app/                  Next.js App Router entry (layout, page, globals.css)
-  components/
-    ui/                  Design-system primitives (Button, TextField, TextArea,
-                          GradientText, SectionHeading, Icon)
-    layout/               Header, Footer
-  features/               One folder per page section
-    hero/
-    about/
-    work/                  + ProjectCard
-    contact/                 + ContactForm (client), ContactInfo
-  lib/                     Small shared utilities (cn helper)
-  hooks/                   (reserved for future client-side hooks)
-  types/                   Shared TypeScript types
-  constants/               Site copy & navigation data
-public/
-  images/                  Static image assets
-  videos/                  Static video assets
-.storybook/                Storybook configuration
-```
-
-Server Components are the default everywhere; only `Header` (mobile
-menu state) and `ContactForm` (form state/validation) are Client
-Components (`"use client"`).
-
-## Design tokens
-
-All tokens are centralized in `tailwind.config.ts` and were extracted
-from the Figma file's own **Design System** page (colors, typography,
-buttons, form elements) rather than approximated:
-
-- **Colors** - `primary.magenta #DC00D3`, `primary.cyan #0CFFFF`,
-  `primary.dark #100425` (page background), plus neutral/accent tokens
-  for text, field backgrounds, focus/error states.
-- **Typography** - Josefin Sans (headings/body) and Inter (nav),
-  loaded via `next/font/google`. `text-h1` / `text-h2` / `text-h3` /
-  `text-body-lg` / `text-body-sm` / `text-label` map to the documented
-  type scale.
-- **Gradients** - `bg-brand-gradient` (cyan to magenta, text/buttons) and
-  `bg-button-gradient` (purple to cyan CTA button), both copied from the
-  exact `linear-gradient(...)` values in the Figma file.
-- **Radius** - `rounded-card` (14px) for cards/inputs, `rounded-full`
-  for pill buttons.
-
-## Known simplifications
-
-Because this environment has no network access, a few purely visual
-assets could not be exported from Figma and downloaded into the
-project. They're implemented as close CSS/SVG approximations instead
-of pixel-exact traces, and are called out in code comments at each
-usage site:
-
-- **Hero portrait photo** (`public/images/hero-portrait.svg`) - a
-  gradient placeholder standing in for the real cut-out photograph.
-- **Hero background grid lines** - approximated with a CSS
-  linear-gradient grid instead of tracing the individual line vectors.
-- **About "Skills" illustration** - the Figma group is a large,
-  purely decorative vector composition (no text/icon labels), replaced
-  with a simplified gradient graphic (`about-illustration.svg`).
-- **Project card mockups** (`public/videos/project-*.mp4`) - gradient
-  "browser window" placeholders standing in for the real project
-  screenshots/photos used in the design.
-
-To reach full pixel fidelity, export the corresponding assets from
-Figma (right-click the layer -> Export) and drop them into
-`public/images/`, replacing the placeholder file names already wired
-up in the components.
-
-All **copy** (headings, paragraphs, project titles/descriptions,
-contact details, footer text) was extracted verbatim from the Figma
-file - nothing was invented.
-
-## Update: Hero photo, Tech Stack & Showcase preview
-
-Added on top of the initial Figma implementation, based on user-provided
-reference images:
-
-- **Hero** (`src/features/hero/Hero.tsx`) - now uses the user's own
-  uploaded photo (`public/images/profile-photo.webp`, already supplied
-  with a transparent background) in a responsive two-column layout:
-  copy on the left, photo with a brand-gradient glow on the right on
-  `lg+` screens, stacked and centered below that. The existing dot-grid
-  background pattern and button styling were kept unchanged.
-- **Tech Stack** (`src/features/about/TechStack`) - a new showcase
-  section inside `About`, rendering a responsive grid of `TechCard`
-  (`src/components/ui/TechCard`) items for HTML, CSS, JavaScript,
-  TypeScript, React, Next.js, Tailwind CSS, Git & GitHub, REST API,
-  Responsive Design, React Query and UI/UX Fundamentals. Icons are a
-  small hand-authored set (`src/components/ui/Icon/techIcons.tsx`) -
-  simplified, single-style glyphs rather than traced official brand
-  logos, since this environment has no network access to fetch the
-  real logo assets. Swap in official SVGs there if you'd like exact
-  brand marks.
-- **Showcase preview** (`src/features/about/ShowcasePreview`) - a
-  recreated (not screenshotted) version of the browser-chrome panel
-  glimpsed at the bottom of the reference graphic, built with a new
-  reusable `BrowserWindow` component (`src/components/ui/BrowserWindow`)
-  and a small syntax-highlighted code sample.
-
-As before, `npm install` / `npm run typecheck` / `npm run build` could
-not be executed in this sandbox (no network access) - please run them
-locally as a first check.
-
-## Update: Parallax migrated to GSAP + ScrollTrigger
-
-The scroll-parallax layer (`src/components/ui/Parallax`) now uses
-**GSAP** (`gsap` + `gsap/ScrollTrigger`) instead of the earlier
-hand-rolled scroll/rAF hook. The public API is unchanged - every call
-site (`Hero`, `About`, `TechStack`, `ProjectCard`) still just wraps a
-decorative element in `<Parallax speed={...}>`, so nothing in those
-files changed except updating the `speed` numbers to the new unit
-(pixels of drift across the element's scroll-through, instead of the
-old distance-from-center multiplier).
-
-Implementation notes:
-
-- Each `Parallax` instance creates its own `gsap.context()`, and the
-  returned `ctx.revert()` is called in the `useEffect` cleanup - this
-  removes both the tween **and** its `ScrollTrigger` instance on
-  unmount, so nothing leaks across route changes or hot-reloads.
-- `scrollTrigger: { scrub: 1 }` ties movement to scroll position with
-  a small smoothing lag (not `scrub: true`) for a premium feel;
-  normal browser scrolling is completely untouched - there is no
-  scroll-jacking.
-- `prefers-reduced-motion` is checked before the tween is even
-  created (the effect returns early), backed by the same
-  `motion-reduce:!transform-none` CSS class as before.
-- Only the Y axis is ever animated, so there's still no horizontal
-  overflow risk.
-
-**Important - could not be verified in this sandbox:** this
-environment has no network access, so `gsap` could not actually be
-installed here, and `npm run typecheck` currently fails with exactly
-two "Cannot find module 'gsap'" errors (nothing else - removing those
-two lines mentally, the rest of the codebase still type-checks and
-lints clean, which was confirmed before this change). Please run:
-
-```bash
-npm install  
-npm run typecheck
 npm run dev
 ```
 
-as your first step and let me know if anything surfaces - the GSAP
-API used here (`gsap.context`, `ScrollTrigger`, `scrub`) has been
-stable across the 3.x line, but I'd rather you verify it for real
-than take my word for it.
+Open:
+
+```text
+http://localhost:3000
+```
+
+Start Storybook:
+
+```bash
+npm run storybook
+```
+
+---
+
+## 📜 Available Scripts
+
+```bash
+npm run dev
+```
+
+Start the development server.
+
+```bash
+npm run build
+```
+
+Create a production build.
+
+```bash
+npm run start
+```
+
+Run the production build.
+
+```bash
+npm run typecheck
+```
+
+Run TypeScript type checking.
+
+```bash
+npm run lint
+```
+
+Run ESLint.
+
+```bash
+npm run storybook
+```
+
+Start Storybook.
+
+```bash
+npm run build-storybook
+```
+
+Build Storybook for production.
+
+---
+
+## ⚡ Performance & Code Quality
+
+Some of the decisions made during development:
+
+* TypeScript for type safety
+* Reusable UI primitives
+* Feature-Based architecture
+* Centralized design tokens
+* Server Components by default
+* Limited Client Components
+* GSAP lifecycle cleanup
+* Reduced-motion support
+* No unnecessary scroll-jacking
+* Reusable animation components
+* Responsive-first implementation
+
+---
+
+## 🎯 Design Fidelity
+
+The original UI was recreated from the provided Figma design with a strong focus on **pixel-level accuracy**.
+
+The implementation covers:
+
+* Layout
+* Typography
+* Colors
+* Spacing
+* Gradients
+* Buttons
+* Forms
+* Cards
+* Responsive behavior
+* Animations
+
+Some decorative assets required approximation because the original Figma assets were not available in the development environment.
+
+These include:
+
+* Hero decorative elements
+* Background grid
+* About illustration
+* Project preview visuals
+
+The project structure keeps these assets isolated, so they can easily be replaced with the original exported Figma assets later.
+
+---
+
+## 🔮 Future Improvements
+
+Possible future improvements include:
+
+* Replace remaining placeholder visuals with exported Figma assets
+* Add more project case studies
+* Improve accessibility coverage
+* Add automated visual regression testing
+* Expand Storybook documentation
+* Add more advanced GSAP interactions
+* Improve SEO metadata
+* Add Open Graph / social preview images
+
+---
+
+## 🌐 Live Demo
+
+<p align="center">
+
+### [🚀 View Live Portfolio](https://dev-portfolio-6d29.vercel.app/)
+
+</p>
+
+---
+
+## 👩🏻‍💻 About Me
+
+I'm **Nastaran**, a Front-End Developer focused on building modern, responsive and reusable web interfaces.
+
+I enjoy working with:
+
+```text
+React
+Next.js
+TypeScript
+JavaScript
+Tailwind CSS
+GSAP
+Design Systems
+Component Architecture
+AI-assisted Development
+```
+
+I'm always learning, experimenting and looking for better ways to turn complex ideas into simple and maintainable interfaces.
+
+---
+
+<p align="center">
+  Made with ❤️ and a lot of ☕
+</p>
