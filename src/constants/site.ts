@@ -2,11 +2,16 @@ export const SITE = {
   name: "Nastaran",
   role: "Front-End Developer.",
   tagline:
-    "A self-taught front-end developer with over 1 year of experience, I build responsive and user-friendly websites & app. I focus on clean code and efficient design, ensuring seamless interactions that align with both user expectations and business objectives.",
+    "A self-taught Front-End Developer with over 1 year of hands-on experience building responsive, accessible, and user-focused web applications. I specialize in React and modern front-end technologies, with a strong focus on clean architecture, reusable components, responsive design, and maintainable code.",
+
   aboutText:
-    "I'm a junior front-end developer looking for a new role in an exciting company. I focus on writing accessible HTML, using modern CSS practices and writing clean JavaScript. When writing JavaScript code, I mostly use React, but I can adapt to whatever tools are required. I'm based in London, UK, but I'm happy working remotely and have experience in remote teams. When I'm not coding, you'll find me outdoors. I love being out in nature whether that's going for a walk, run or cycling. I'd love you to check out my work.",
-  workSubtitle: "A collection of projects I've worked on.",
+    "I'm a self-taught Front-End Developer passionate about creating modern, responsive, and user-friendly web experiences. I work with React, Next.js, TypeScript, JavaScript, Tailwind CSS, and modern component-based architectures. I care about clean and maintainable code, reusable components, responsive design, accessibility, performance, and polished user experiences. I enjoy transforming UI designs into real-world products and continuously improving my development practices by learning modern tools, architectural patterns, and industry best practices. I'm currently looking for opportunities where I can contribute to real-world products, collaborate with experienced developers, solve challenging problems, and continue growing as a Front-End Developer.",
+
+  workSubtitle:
+    "A selection of projects I've designed and developed, showcasing my experience with modern front-end technologies, responsive interfaces, reusable components, and clean development practices.",
+
   contactIntro:
-    "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track.",
-  copyright: "2026 - Nastaran, All rights reserved",
+    "Have a project in mind or looking for a Front-End Developer to join your team? I'm always open to discussing new projects, collaboration opportunities, and exciting ideas. Feel free to get in touch — I'd be happy to hear about your project and explore how I can contribute.",
+
+  copyright: "© 2026 Nastaran. All rights reserved",
 } as const;
